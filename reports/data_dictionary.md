@@ -1,0 +1,7 @@
+customers (customer_id)           1 --- many  orders (customer_id)
+orders (order_id)                 1 --- many  order_items (order_id)
+orders (order_id)                 1 --- many  order_payments (order_id)
+orders (order_id)                 1 --- many  order_reviews (order_id)
+products (product_id)             1 --- many  order_items (product_id)
+sellers (seller_id)               1 --- many  order_items (seller_id)
+category_translation (product_category_name)  1 --- many  products (product_category_name)
