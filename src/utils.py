@@ -1,4 +1,8 @@
 """Shared helpers for the Olist project."""
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
 import os
 from pathlib import Path
 
@@ -21,3 +25,18 @@ def get_engine():
         query={"charset": "utf8mb4"},
     )
     return create_engine(url)
+
+
+FIG_DIR = ROOT / "reports" / "figures"
+
+
+def load_orders_clean():
+    date_cols = ["order_purchase_timestamp",
+                 "order_delivered_customer_date",
+                 "order_estimated_delivery_date"]
+    return pd.read_sql("SELECT * FROM orders_clean", get_engine(), parse_dates=date_cols)
+
+
+def save_fig(name):
+    FIG_DIR.mkdir(parents=True, exist_ok=True)
+    plt.savefig(FIG_DIR / f"{name}.png", dpi=150, bbox_inches="tight")

@@ -1,0 +1,6 @@
+segment,customers,revenue,avg_spend,avg_recency_days,pct_customers,pct_revenue
+High-value one-time,21566,8427057.3,390.8,237.6,23.1,54.7
+Recent one-time,34257,3063850.5,89.4,111.8,36.7,19.9
+Lost one-time,34726,3063299.6,88.2,364.1,37.2,19.9
+"Champions (repeat, recent)",1544,485942.2,314.7,112.6,1.7,3.2
+Loyal but lapsing,1257,378245.3,300.9,352.6,1.3,2.5
